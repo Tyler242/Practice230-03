@@ -1,21 +1,26 @@
 /*************************************************************
- * Header File:
- *    Angle.h
- * Author:
- *    Tyler Shellman & Caleb Rasmussen
- * Summary:
- *    This file holds the class definition for the Angle class.
- **************************************************************/
+* Header File:
+*    Angle.h
+* Author:
+*    Tyler Shellman & Caleb Rasmussen
+* Summary:
+*    This file holds the class definition for the Angle class.
+**************************************************************/
+
+#include <iostream>
+using namespace std;
 
  /*************************************************************
-  * A class that represents an angle
-  **************************************************************/
+ * Angle
+ * A class that represents an angle
+ **************************************************************/
 class Angle
 {
 public:
 
-	// Constructor 
-	Angle();
+	// Constructors
+	Angle(double Angle);
+	Angle(const Angle& rhs);
 
 	// Getters
 	double getDegrees() const;
@@ -25,7 +30,7 @@ public:
 	void setDegrees(double degrees);
 	void setRadians(double radians);
 
-	void display() const;
+	void display(double value) const;
 
 private:
 	double angle;
