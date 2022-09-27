@@ -14,6 +14,9 @@ class Angle
 {
 public:
 
+	// Constructor 
+	Angle();
+
 	// Getters
 	double getDegrees() const;
 	double getRadians() const;
