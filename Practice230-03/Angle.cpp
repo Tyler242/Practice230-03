@@ -9,6 +9,7 @@
  **************************************************************/
 
 #include "Angle.h"
+#define PI       3.14159265358979323846
 
 
 /***************************************************
@@ -24,8 +25,7 @@ Angle::Angle() {
   *
   **************************************************/
 double Angle::getDegrees() const {
-
-	return;
+	return angle * (180 / PI);
 }
 
 /***************************************************
@@ -33,8 +33,7 @@ double Angle::getDegrees() const {
  *
  **************************************************/
 double Angle::getRadians() const {
-
-	return;
+	return angle;
 }
 
 /***************************************************
@@ -42,7 +41,7 @@ double Angle::getRadians() const {
  *
  **************************************************/
 void Angle::setDegrees(double degrees) {
-
+	this->angle = convertToRadians(degrees);
 }
 
 /***************************************************
@@ -50,6 +49,7 @@ void Angle::setDegrees(double degrees) {
  *
  **************************************************/
 void Angle::setRadians(double radians) {
+	this->angle = radians;
 
 }
 
@@ -66,18 +66,16 @@ void Angle::display() const {
  * CONVERT TO DEGREES
  *
  **************************************************/
-double Angle::convertToDegrees(double) const {
-
-	return;
+double Angle::convertToDegrees(double radians) const {
+	return radians * (180 / PI);
 }
 
 /***************************************************
  * CONVERT TO RADIANS
  *
  **************************************************/
-double Angle::convertToRadians(double) const {
-
-	return;
+double Angle::convertToRadians(double degrees) const {
+	return (degrees / 360) * (2 * PI);
 }
 
 /***************************************************
