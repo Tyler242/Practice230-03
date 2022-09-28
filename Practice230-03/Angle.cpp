@@ -105,7 +105,31 @@ double Angle::convertToRadians(double degrees) const {
  * NORMALIZE
  *
  **************************************************/
-double Angle::normalize(double angle) const {
 
-	return;
+double Angle::normalize(double angle) const {
+	if (angle == int(angle)) {
+		cout << "angle is in degrees";
+		if (angle < 0) {
+			int rev = (int(angle * -1) % 360) + 1;
+			return angle + (360 * rev);
+		}
+		else {
+			int rev = int(angle) % 360;
+			return angle - (360 * rev);
+		}
+	}
+	else {
+		cout << "angle is in radians";
+		double degreeAngle = convertToDegrees(angle);
+		if (angle < 0) {
+			double rev = (fmod(degreeAngle * -1, 360)) + 1;
+			return convertToRadians(degreeAngle + (360 * rev));
+		}
+		else {
+			double rev = fmod(degreeAngle, 360);
+			return convertToRadians(degreeAngle - (360 * rev));
+		}
+
+
+	}
 }
