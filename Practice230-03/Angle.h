@@ -10,6 +10,8 @@
 #include <iostream>
 using namespace std;
 
+#define PI       3.14159265358979323846
+
  /*************************************************************
  * Angle
  * A class that represents an angle
@@ -19,7 +21,7 @@ class Angle
 public:
 
 	// Constructors
-	Angle(double Angle);
+	Angle();
 	Angle(const Angle& rhs);
 
 	// Getters
@@ -30,13 +32,13 @@ public:
 	void setDegrees(double degrees);
 	void setRadians(double radians);
 
-	void display(double value) const;
+	void display() const;
 
 private:
 	double angle;
 
-	double convertToDegrees(double) const;
-	double convertToRadians(double) const;
+	double convertToDegrees(double radians) const;
+	double convertToRadians(double degrees) const;
 	double normalize(double angle) const;
 };
 
